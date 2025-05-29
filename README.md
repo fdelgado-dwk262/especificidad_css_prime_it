@@ -20,15 +20,15 @@ Se levantará el servidor en:
 http://localhost:3000/
 
 ## Recursos adicionales:
-[CSS Selector Specificity Calculator | Polypane​] {https://polypane.app/css-specificity-calculator/#selector=}
-​
-[Specificity - CSS: Cascading Style Sheets | MDN​] {https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity}
+[CSS Selector Specificity Calculator | Polypane​](https://polypane.app/css-specificity-calculator/#selector=)
 
-[Metodologías o Arquitecturas CSS (OOCSS, BEM, SMACSS, ITCSS, Atomic Design) | by William Bastidas | williambastidasblog | Medium​]{https://medium.com/williambastidasblog/metodolog%C3%ADas-o-arquitecturas-css-oocss-bem-smacss-itcss-atomic-design-a1a3cfbfa6c9}
+[Specificity - CSS: Cascading Style Sheets | MDN​](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity)
+
+[Metodologías o Arquitecturas CSS (OOCSS, BEM, SMACSS, ITCSS, Atomic Design) | by William Bastidas | williambastidasblog | Medium​](https://medium.com/williambastidasblog/metodolog%C3%ADas-o-arquitecturas-css-oocss-bem-smacss-itcss-atomic-design-a1a3cfbfa6c9)
 ​
-[Currentcolor​] {https://css-tricks.com/currentcolor/}
+[Currentcolor​](https://css-tricks.com/currentcolor/)
 
 ​
-[Caninclude​] {https://caninclude.glitch.me/}
-​
-[Lorem Picsum​] {https://picsum.photos/}
+[Caninclude​](https://caninclude.glitch.me/)
+
+[Lorem Picsum​](https://picsum.photos/)
