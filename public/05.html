@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de pruebas de especificidad</title>
+</head>
+<body>
+    <style>
+/* ---------------- ¿Qué color tendrá el enlace al pasar el ratón sobre él? Explica la especificidad involucrada. */
+
+a {
+  color: black;
+}
+
+a.boton:hover {
+  color: orange;
+}
+
+.boton {
+  color: green;
+}
+
+              .boton:hover {
+                color: red;
+              }
+        .hidden {
+            display: none;
+        }
+        
+        </style>
+    <h1>Especificidad</h1>
+    <h3>Ejercicio 5: Práctica con pseudo-clases</h3>
+    <h4>¿Qué color tendrá el enlace al pasar el ratón sobre él? Explica la especificidad involucrada.</h4>
+
+    <pre>
+        <code>
+            a {
+                color: black;
+            }
+
+            a.boton:hover {
+                color: orange;
+            }
+
+            .boton {
+                color: green;
+            }
+
+            .boton:hover {
+                color: red;
+            }
+
+            .boton {
+                color: green;
+            }
+        </code>
+    </pre>
+
+        <code>
+            
+            &lt;a href="#" class="boton"&gt;Haz clic aquí&lt;/a&gt;
+        </code>
+
+        <hr>
+        <button id="toggleButton">Ver solución</button>
+        <hr>
+        <div id="content" class="hidden">
+            <a href="#" class="boton">Haz clic aquí</a>
+            <p class="boton">de que color es el hover ?</p>
+        </div>
+
+
+        <hr>
+        <a href="index.html"><- volver</a>
+        
+        <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de pruebas de especificidad</title>
+</head>
+<body>
+    <style>
+/* ---------------- ¿Cuál será el color de fondo del div? ¿Importa el orden de las reglas? */
+
+.importante {
+  background-color: yellow;
+}
+
+.caja {
+  background-color: orange;
+}
+        
+        
+        .hidden {
+            display: none;
+        }
+        
+        </style>
+    <h1>Especificidad</h1>
+    <h3>Ejercicio 2: Orden de reglas vs especificidad</h3>
+    <h4>¿Cuál será el color de fondo del div? ¿Importa el orden de las reglas?</h4>
+
+    <pre>
+        <code>
+            .importante {
+                background-color: yellow;
+            }
+
+            .caja {
+                background-color: orange;
+            }
+        </code>
+    </pre>
+
+        <code>
+            &lt;div class="caja importante"&gt;¡Hola mundo!&lt;/div&gt;
+        </code>
+
+        <hr>
+        <button id="toggleButton">Ver solución</button>
+        <hr>
+        <div id="content" class="hidden">
+            <div class="caja importante">¡Hola mundo!</div>
+        </div>
+
+        <hr>
+        <a href="index.html"><- volver</a>
+        
+        <script src="script.js"></script>
+</body>
+</html>

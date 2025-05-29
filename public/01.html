@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de pruebas de especificidad</title>
+</head>
+<body>
+    <style>
+        /* ---------------- ¿Qué color tendrá el texto del párrafo? ¿Por qué? */
+        
+        p {
+            color: blue;
+        }
+        
+        .resaltado {
+            color: green;
+        }
+        
+        #especial {
+            color: red;
+        }
+        
+        
+        .hidden {
+            display: none;
+        }
+        
+        </style>
+    <h1>Especificidad</h1>
+    <h3>Ejercicio 1: Comprendiendo la Especificidad Básica</h3>
+    <h4>¿Qué color tendrá el texto del párrafo? ¿Por qué?</h4>
+
+    <pre>
+        <code>
+            p {
+                color: blue;
+            }
+
+            .resaltado {
+                color: green;
+            }
+
+            #especial {
+                color: red;
+            }
+        </code>
+    </pre>
+
+        <code>
+            &lt;p class="resaltado" id="especial"&gt;Este es un párrafo de prueba.&lt;/p&gt;
+        </code>
+
+        <hr>
+        <button id="toggleButton">Ver solución</button>
+        <hr>
+        <div id="content" class="hidden">
+            <p class="resaltado" id="especial">Este es un párrafo de prueba.</p>
+        </div>
+
+        <hr>
+        <a href="index.html"><- volver</a>
+        
+        <script src="script.js"></script>
+</body>
+</html>
