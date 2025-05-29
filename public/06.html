@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de pruebas de especificidad</title>
+</head>
+<body>
+    <style>
+
+/* Regla 1 */
+p {
+  color: black;
+}
+
+/* Regla 2 */
+.modulo p.destacado {
+  color: orange;
+}
+
+/* Regla 3 */
+#contenedor .destacado {
+  color: blue;
+}
+
+/* Regla 4 */
+#contenedor p.texto.destacado {
+  color: green !important;
+}
+
+/* Regla 5 */
+section.modulo #contenedor .texto {
+  color: red;
+}
+        .hidden {
+            display: none;
+        }
+        
+        </style>
+    <h1>Especificidad</h1>
+    <h3>Anexo 1 : Guerra de Especificidad</h3>
+    <h4>¿De qué color se mostrará finalmente el texto del párrafo?</h4>
+      <p>Calcula la especificidad de cada regla que afecta al párrafo.</p>Calcula la especificidad de cada regla que afecta al párrafo.
+    </h4>¿Por qué la regla 4 se impone sobre las demás, incluso si alguna pudiera tener más especificidad?</h4>
+      <p>Si elimináramos !important de la regla 4, ¿cuál sería el color final? Justifica.</p>
+
+    <pre>
+        <code>
+
+          /* Regla 1 */
+          p {
+            color: black;
+          }
+          
+          /* Regla 2 */
+          .modulo p.destacado {
+            color: orange;
+          }
+          
+          /* Regla 3 */
+          #contenedor .destacado {
+            color: blue;
+          }
+          
+          /* Regla 4 */
+          #contenedor p.texto.destacado {
+            color: green !important;
+          }
+          
+          /* Regla 5 */
+          section.modulo #contenedor .texto {
+            color: red;
+          }
+        </code>
+    </pre>
+
+        <code>
+            
+
+          &lt;section class=&quot;modulo&quot;&gt;
+          &lt;div id=&quot;contenedor&quot;&gt;
+          &lt;p class=&quot;texto destacado&quot;&gt;Texto importante&lt;/p&gt;
+           &lt;/div&gt;
+          &lt;/section&gt;
+          
+        </code>
+
+        <hr>
+        <button id="toggleButton">Ver solución</button>
+        <hr>
+        <div id="content" class="hidden">
+          <section class="modulo">
+            <div id="contenedor">
+              <p class="texto destacado">Texto importante</p>
+            </div>
+          </section>
+
+          <code>
+            <p>Resultado final:
+              La regla 4 gana porque incluye !important, que anula todas las demás, incluso si alguna tiene igual o mayor especificidad.</p>
+              <p>El color final del texto es: green</p>
+              <p>¿Qué pasa si eliminamos !important?
+              Ahora se comparan solo por especificidad.</p>
+              <p>La regla 4 y la regla 5 tienen igual especificidad (0,1,2,1).</p>
+              <p>Como la regla 5 aparece después en la hoja de estilos, predomina por orden en la cascada.</p>
+              <p>Color final: red</p>
+              <table>
+              <thead>
+              <tr>
+              <th>Selector</th>
+              <th>ID</th>
+              <th>Clases</th>
+              <th>Elementos</th>
+              <th>Especificidad</th>
+              <th>Comentario</th>
+              </tr>
+              </thead>
+              <tbody><tr>
+              <td><code>p</code></td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0,0,0,1</td>
+              <td>Más débil</td>
+              </tr>
+              <tr>
+              <td><code>.modulo p.destacado</code></td>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>0,0,1,2</td>
+              <td>Media</td>
+              </tr>
+              <tr>
+              <td><code>#contenedor .destacado</code></td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0,1,1,0</td>
+              <td>Más fuerte</td>
+              </tr>
+              <tr>
+              <td><code>#contenedor p.texto.destacado</code></td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>0,1,2,1</td>
+              <td>Muy fuerte</td>
+              </tr>
+              <tr>
+              <td><code>section.modulo #contenedor .texto</code></td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>0,1,2,1</td>
+              <td>Igual que regla 4</td>
+              </tr>
+              </tbody></table>
+              
+          </code>
+        </div>
+
+
+        <hr>
+        <a href="index.html"><- volver</a>
+        
+        <script src="script.js"></script>
+</body>
+</html>
