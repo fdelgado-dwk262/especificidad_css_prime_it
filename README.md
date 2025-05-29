@@ -1,6 +1,6 @@
 # especificidad_css_prime_it
 
-## Demo de especificidad CSS - KeyNote - PrimIT
+## Demo de especificidad CSS - KeyNote - PrimeIT
 
 Demo sobre especificidad CSS.
 
