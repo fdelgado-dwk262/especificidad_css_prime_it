@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de pruebas de especificidad</title>
+</head>
+<body>
+    <style>
+/* ---------------- ¿Qué color tiene el texto "Elemento 1"? Explica el cálculo de especificidad de cada selector.*/
+ul li.activo {
+  color: green;
+}
+
+li {
+  color: black;
+}
+
+        
+        
+        .hidden {
+            display: none;
+        }
+        
+        </style>
+    <h1>Especificidad</h1>
+    <h3>Ejercicio 3: Selectores combinados</h3>
+    <h4> ¿Qué color tiene el texto "Elemento 1"? Explica el cálculo de especificidad de cada selector</h4>
+
+    <pre>
+        <code>
+            li {
+                color: black;
+            }
+
+            ul li.activo {
+                color: green;
+            }
+        </code>
+    </pre>
+
+        <code>
+            &lt;ul&gt;
+                &lt;li class="activo">Elemento 1&lt;/li&gt;
+                &lt;li>Elemento 2&lt;/li&gt;
+            &lt;/ul&gt;
+
+        </code>
+
+        <hr>
+        <button id="toggleButton">Ver solución</button>
+        <hr>
+        <div id="content" class="hidden">
+            <ul>
+                <li class="activo">Elemento 1</li>
+                <li>Elemento 2</li>
+              </ul>
+        </div>
+
+
+        <hr>
+        <a href="index.html"><- volver</a>
+        
+        <script src="script.js"></script>
+
+
+</body>
+</html>

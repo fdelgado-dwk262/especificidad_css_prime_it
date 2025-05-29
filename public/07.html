@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de pruebas de especificidad</title>
+</head>
+<body>
+    <style>
+
+* {color:grey}
+
+div {
+ color: red;
+}
+
+.clase {
+    color: blue;
+}
+
+div.clase {
+    color:chartreuse;
+}
+
+#id {
+    color: green;
+}
+
+div#id {
+    color:deeppink;
+}
+
+div.clase#id {
+    color:maroon;
+}
+
+
+.important {
+    color:chocolate!important;
+}
+
+#id-important{
+    color:orange!important;
+}
+
+/* .after::after{
+    content: 'prueba de affter';
+    background-color:darkred;
+    color: white;
+}
+.before::before{
+    content: 'prueba de before';
+    background-color:blueviolet;
+    color: white;
+} */
+
+div:nth-child(3) {
+    color: blueviolet;
+}
+
+span:nth-child(2) {
+    color: blueviolet;
+}
+
+/* Etiqueta y anidamientos*/
+p {
+/* 0 0 0 1 */
+color: rgb(255, 0, 0);
+}
+.container span {
+/* 0 0 0 1 */
+color: rgb(255, 0, 200);
+} 
+div p {
+/* 0 0 0 2 */
+color: rgb(0, 4, 255);
+} 
+div > p {
+/* 0 0 0 2 */
+color: rgb(0, 202, 216);
+}
+div p > span {
+/* 0 0 0 3 */
+color: rgb(0, 207, 35);
+}
+div.container p > span {
+/* 0 0 0 3 */
+color: rgb(255, 196, 0);
+}
+        
+        </style>
+    <h1>Especificidad</h1>
+    <h3>Anexo 2 : Pruebas</h3>
+
+    
+  <hr />
+    <div>
+      div - (0,0,1)
+  </div>
+  <span>
+      pseudoclases - (0,1,1)
+  </span>
+
+  <div>
+      div + pseudoclases - (0,1,1)
+  </div>
+
+  <hr />
+
+  <span class="clase">
+      clase - (0,1,0)
+  </span>
+
+  <div class="clase">
+      div + clase - (0,1,1)
+  </div>
+
+  <span id="id">
+      id - (1,0,0)
+  </span>
+
+  <div id="id">
+      div + id - (1,0,1)
+  </div>
+
+  <div class="clase" id="id">
+      div + clase + id - (1,1,1)
+  </div>
+
+  <hr />
+
+  <div class="clase important" id="id">
+      clase con important - (0,1,0) - por encima de todo
+  </div>
+  
+  <div class="clase" id="id-important">
+      ID con important - (1,0,0) - por encima de todo
+  </div>
+
+  <div class="clase important" id="id-important">
+      ID con important - (1,0,0) - por encima de todo
+  </div>
+  
+  <hr />
+
+  <div class="clase" id="id" style="color: wheat" >
+      Style - (  )
+  </div>
+  <div class="clase important" id="id" style="color: wheat" >
+      Style `+ clase con important ( - )
+  </div>
+  
+  <hr />
+
+  <!-- <div class="after">
+      contenido al que no aplica (0,1,1)
+  </div>
+  <div class="before">
+      contenido al que no aplica (0,1,1)
+  </div>
+
+  <div class="before after">
+      contenido al que no aplica (0,1,1)
+  </div> -->
+
+  <h2>Etiquetas y anidadciones </h2>
+  <div class="container">
+      <p>
+          <span>Especificidad</span>
+      </p>
+  </div>
+
+  <h2>Clases y anidadciones </h2>
+  <div class="container02">
+      <a href="#">Link</a>
+      <p>
+          <span>Especificidad</span>
+      </p>
+  </div>
+  <div class="container02 container02">
+      <p>
+          <span>Especificidad</span>
+      </p>
+  </div>
+
+
+        <hr>
+        <a href="index.html"><- volver</a>
+        
+        <script src="script.js"></script>
+</body>
+</html>
